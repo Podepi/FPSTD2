@@ -16,6 +16,7 @@ public class PerformsAttack : MonoBehaviour {
 
 	public GameObject hitEffectPrefab;
 	public GameObject lineEffectPrefab;
+	public float lineWidth = 1.0f;
 	public Transform shootPoint;
 
 	// Use this for initialization
@@ -66,7 +67,10 @@ public class PerformsAttack : MonoBehaviour {
 			// Show laser effect. This is after the if statement because we want to see the laser even if it hits nothing.
 			if (lineEffectPrefab != null) {
 				GameObject laser = Instantiate (lineEffectPrefab, shootPoint.position, Quaternion.identity);
+				laser.transform.SetParent (transform);
+				laser.GetComponent<LaserScript> ().lineWidth = lineWidth;
 				if (hitInfo.point == Vector3.zero) {
+					// Laser missed
 					laser.GetComponent<LaserScript> ().SetTarget (cmt.position + (cmt.forward * range));
 				} else {
 					laser.GetComponent<LaserScript> ().SetTarget (hitInfo.point);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,18 @@ public class DetonateOnHit : MonoBehaviour {
 		Collider[] colliders = Physics.OverlapSphere (transform.position, explosionRadius);
 
 		foreach (Collider c in colliders) {
-			HasHealth h = c.GetComponent<HasHealth> ();
+
+			GameObject go;
+
+			// Attempt to grab gameobject of attached rigidbody.
+			// This is so we can hit compound colliders.
+			try {
+				go = c.attachedRigidbody.gameObject;
+			} catch(NullReferenceException e) {
+				go = c.gameObject;
+			}
+
+			HasHealth h = go.GetComponent<HasHealth> ();
 
 			// Skip if collider doesn't have health
 			if (h == null) continue;
@@ -27,12 +39,11 @@ public class DetonateOnHit : MonoBehaviour {
 				h.ReceiveDamage (damage);
 				continue;
 			}
-
 			// Otherwise, deal damage based on distance.
-			float dist = Vector3.Distance (transform.position, c.transform.position);
 
-			// Clamped so that damage doesn't go below 0.
-			float damageRatio = Mathf.Clamp(1f - (dist / explosionRadius), 0f, 1f);
+			// Damage ratio clamped so that damage doesn't go below 0.
+			float dist = Vector3.Distance (transform.position, go.transform.position);
+			float damageRatio = Mathf.Clamp01(1f - (dist / explosionRadius));
 
 			h.ReceiveDamage (damage * damageRatio);
 		}

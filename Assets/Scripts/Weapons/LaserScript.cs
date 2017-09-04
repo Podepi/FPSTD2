@@ -5,13 +5,16 @@ using UnityEngine;
 public class LaserScript : MonoBehaviour {
 
 	public float timer = 1.0f;
+	public float lineWidth = 1.0f;
+	float timeLeft = 1.0f;
+
 	public Vector3 target;
 	LineRenderer lineRend;
-	float timeLeft = 1.0f;
 
 	private void Start()
 	{
 		lineRend = GetComponent<LineRenderer> ();
+		Debug.Log(lineRend.widthMultiplier);
 		
 		//Destroy(gameObject, timer);
 
@@ -22,7 +25,7 @@ public class LaserScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeLeft = Mathf.Clamp01(timeLeft - Time.deltaTime / timer);
-		lineRend.widthMultiplier = timeLeft;
+		lineRend.widthMultiplier = timeLeft * lineWidth;
 		lineRend.SetPosition (0, transform.position);
 		lineRend.SetPosition (1, target);
 		//float alpha = Mathf.Lerp(0, 255, timeLeft);
