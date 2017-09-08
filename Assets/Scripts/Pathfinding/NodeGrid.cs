@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NodeGrid : MonoBehaviour {
 
+	public static NodeGrid instance;
+
 	public bool displayGridGizmos;
 	public Transform player;
 	public LayerMask unWalkableMask;
@@ -15,6 +17,7 @@ public class NodeGrid : MonoBehaviour {
 	int gridSizeX, gridSizeY;
 
 	void Awake() {
+		instance = this;
 		nodeDiameter = nodeRadius * 2;
 		gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
 		gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
@@ -72,6 +75,18 @@ public class NodeGrid : MonoBehaviour {
 		y = Mathf.Clamp(y, 0, gridSizeY-1);
 
 		return grid [x, y];
+	}
+
+	public void PlaceStructure(GameObject newStructure, Vector3 worldPosition, Quaternion rot) {
+		Node node = NodeFromWorldPoint (worldPosition);
+		node.structure = Instantiate (newStructure, node.worldPosition, rot);
+		node.walkable = false;
+	}
+
+	public void RemoveStructure(Vector3 worldPosition) {
+		Node node = NodeFromWorldPoint (worldPosition);
+		Destroy(node.structure);
+		node.walkable = true;
 	}
 
 	void OnDrawGizmos() {

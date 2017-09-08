@@ -14,7 +14,6 @@ public class LaserScript : MonoBehaviour {
 	private void Start()
 	{
 		lineRend = GetComponent<LineRenderer> ();
-		Debug.Log(lineRend.widthMultiplier);
 		
 		//Destroy(gameObject, timer);
 

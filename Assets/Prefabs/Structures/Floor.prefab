@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4580815536723670}
   - component: {fileID: 33900664712745498}
   - component: {fileID: 23374735908587636}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4090431144265214}
   - component: {fileID: 65657207592115692}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1640502636677442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -25, z: -3}
+  m_LocalPosition: {x: -17.69884, y: -51.026432, z: -66.71702}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4580815536723670}

@@ -1,31 +1,30 @@
 fileFormatVersion: 2
-guid: c23d4fd8f9b4b4d28882b7b51d8ad194
-timeCreated: 1504320559
+guid: 72dde5d91a1244a37a5d670cdb888aee
+timeCreated: 1504657871
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cylinder
-    100004: //RootNode
-    100006: PlasmaPistol
-    400000: Cube
-    400002: Cylinder
-    400004: //RootNode
-    400006: PlasmaPistol
-    2100000: Material
-    2100002: Material_001
-    2100004: Material__Untitled
-    2100006: Material_001__Untitled
-    2300000: Cube
-    2300002: Cylinder
-    2300004: PlasmaPistol
-    3300000: Cube
-    3300002: Cylinder
-    3300004: PlasmaPistol
-    4300000: Cube
-    4300002: Cylinder
-    4300004: PlasmaPistol
+    100000: //RootNode
+    100002: PowerCore
+    100004: Rifle_Body
+    100006: RifleCover
+    400000: //RootNode
+    400002: PowerCore
+    400004: Rifle_Body
+    400006: RifleCover
+    2100000: Material_002
+    2100002: Material_003
+    2100004: Material_001
+    2300000: PowerCore
+    2300002: Rifle_Body
+    2300004: RifleCover
+    3300000: PowerCore
+    3300002: Rifle_Body
+    3300004: RifleCover
+    4300000: RifleCover
+    4300002: Rifle_Body
+    4300004: PowerCore
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

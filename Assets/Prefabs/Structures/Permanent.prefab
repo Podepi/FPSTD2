@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4695909844415338}
   - component: {fileID: 33502122169622172}
   - component: {fileID: 23059337291906504}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4293966323956564}
   - component: {fileID: 65063665791307588}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Permanent
   m_TagString: Untagged
   m_Icon: {fileID: 0}

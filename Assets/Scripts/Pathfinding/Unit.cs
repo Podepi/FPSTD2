@@ -5,13 +5,15 @@ using UnityEngine;
 public class Unit : MonoBehaviour {
 
 	public Transform target;
-	float waypointRadius = 2f;
+	private float waypointRadius = 2f;
 	public float speed = 2f;
 
-	Vector3[] path;
-	int targetIndex;
+	private Vector3[] path;
+	private int targetIndex;
+	private NodeGrid grid;
 
 	void Start() {
+		grid = NodeGrid.instance;
 		PathRequestManager.RequestPath (transform.position, target.position, OnPathFound);
 	}
 
@@ -28,6 +30,11 @@ public class Unit : MonoBehaviour {
 		currentWaypoint.y = transform.position.y;
 
 		while (true) {
+			// If next waypoint is unwalkable, request new path
+			if (NodeGrid.instance.NodeFromWorldPoint(currentWaypoint).walkable == false) {
+				PathRequestManager.RequestPath (transform.position, target.position, OnPathFound);
+			}
+			// If within target radius
 			if ((transform.position - currentWaypoint).magnitude <= waypointRadius) {
 				targetIndex++;
 				if (targetIndex >= path.Length) {

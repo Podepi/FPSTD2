@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4521712015811474}
   - component: {fileID: 33751863024714956}
   - component: {fileID: 23023195669034106}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4416169498937852}
   - component: {fileID: 65065066516062070}
   - component: {fileID: 114698535170994286}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639215395056140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -25, z: 0}
+  m_LocalPosition: {x: -17.69884, y: -51.026432, z: -63.71702}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4521712015811474}
@@ -67,7 +67,7 @@ Transform:
   m_GameObject: {fileID: 1158754144137186}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4416169498937852}
   m_RootOrder: 0
@@ -123,7 +123,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 4, z: 4}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &114698535170994286
 MonoBehaviour:
@@ -138,3 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 1000
   debris: {fileID: 0}
+  debrisPoint: {fileID: 0}
